@@ -1,21 +1,24 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Из дюймов в сантиметры</title>
-    </head>
-    <body>
-        <h1>Пересчет величин</h1>
-        <script type="text/javascript">
-            const inst = window.prompt('Величина в дюймах', 0);
-            let cents;
-            if(inst == null)
-                cents = 'Величина не была введена!';
-            else if(inst < 0)
-                cents = 'Величина не может быть отрицательной!'
-            else
-                cents = inst * 2.54;
+
+<head>
+    <meta charset="UTF-8">
+    <title>Из дюймов в сантиметры</title>
+</head>
+
+<body>
+    <h1>Пересчет величин</h1>
+    <script type="text/javascript">
+        const inst = window.prompt('Величина в дюймах', 0);
+        if (inst == null)
+            window.document.write('<p>Величина не была введена!</p>');
+        else if (inst < 0)
+            window.document.write('<p>Величина не может быть' +
+                'отрицательной!</p>');
+        else{
+            const cents = inst * 2.54;
             window.document.write('<p>', cents, '</p>');
-        </script>
-    </body>
+        }
+    </script>
+</body>
 </html>
