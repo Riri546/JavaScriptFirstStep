@@ -8,7 +8,13 @@
         <h1>Пересчет величин</h1>
         <script type="text/javascript">
             const inst = window.prompt('Величина в дюймах', 0);
-            const cents = inst * 2.54;
+            let cents;
+            if(inst == null)
+                cents = 'Величина не была введена!';
+            else if(inst < 0)
+                cents = 'Величина не может быть отрицательной!'
+            else
+                cents = inst * 2.54;
             window.document.write('<p>', cents, '</p>');
         </script>
     </body>
