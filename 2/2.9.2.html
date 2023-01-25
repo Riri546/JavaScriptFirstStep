@@ -22,13 +22,25 @@
         среднеарифметическое ранее введенных значений.</h2>
     <script type="text/javascript">
         'use strict';
-            /*
-            Строгий режим включен!
-            Не забывай объявлять все переменные!
-            */
-        let numA = window.prompt('Введте число а: ', 0);
-        let numB = window.prompt('Введте число b: ', 0);
-        
+        /*
+        Строгий режим включен!
+        Не забывай объявлять все переменные!
+        */
+        let numA, numB, sum, arithMean;
+        numA = window.prompt('Введте число а: ', 0);
+        numB = window.prompt('Введте число b: ', 0);
+        if (numA == null && numB == null)
+            window.document.write('<p>Данные не были введены!</p>');
+        else if (numA == 0 && numB == 0)
+
+            // window.document.write('<p>Величина не может быть' +
+            //     'отрицательной!</p>');
+        else {
+            const cents = inst * 2.54;
+            window.document.write('<p>', "Веичина в дюймых = " + inst, '</p>')
+            window.document.write('<p>', "Величина в сантиметрах = " + cents, '</p>');
+        }
+
 
     </script>
 </body>
