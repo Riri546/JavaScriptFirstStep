@@ -26,20 +26,20 @@
         Строгий режим включен!
         Не забывай объявлять все переменные!
         */
-        let numA, numB, sum, arithMean;
-        numA = window.prompt('Введте число а: ', 0);
-        numB = window.prompt('Введте число b: ', 0);
+        let a, b, sum, avg;
+        a = window.prompt('Введте число а: ', 0);
+        b = window.prompt('Введте число b: ', 0);
         if (numA == null && numB == null)
             window.document.write('<p>Данные не были введены!</p>');
         else if (numA == 0 && numB == 0)
-
-            // window.document.write('<p>Величина не может быть' +
-            //     'отрицательной!</p>');
-        else {
-            const cents = inst * 2.54;
-            window.document.write('<p>', "Веичина в дюймых = " + inst, '</p>')
-            window.document.write('<p>', "Величина в сантиметрах = " + cents, '</p>');
-        }
+            sum = times.reduce((a, b) => a + b, 0);
+            avg = (sum / times.length) || 0;
+            window.document.write('<p>','Среднее арифметическое чисел а = ' + a + 'и b = ' + b + ' = ','</p>');
+        // else {
+        //     const cents = inst * 2.54;
+        //     window.document.write('<p>', "Веичина в дюймых = " + inst, '</p>')
+        //     window.document.write('<p>', "Величина в сантиметрах = " + cents, '</p>');
+        // }
 
 
     </script>
