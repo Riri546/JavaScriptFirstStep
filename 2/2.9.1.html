@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <h1>Квадратные корни от 1 до 10</h1>
+    <h1>Квадратные корни от 10 до 200</h1>
     <table>
         <script type="text/javascript">
             'use strict';
@@ -15,8 +15,8 @@
             Строгий режим включен!
             Не забывай объявлять все переменные!
             */
-            let i = 1, sq;
-            for(i = 1; i <= 10; ++i){
+            let i, sq;
+            for(i = 10; i <= 200; ++i){
                 sq = Math.sqrt(i);
                 if(sq == Math.floor(sq))
                     continue;
