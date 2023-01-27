@@ -31,17 +31,17 @@
         for (i = 0; a != 0; ++i) {
             a = Number(window.prompt('Введте число: ', 0));
             b = Number(window.prompt('Введте число: ', 0));
-            sum = a + b;
             elmt[0] = a;
             elmt[1] = b;
-            avg = sum / elmt.length;
-            window.document.write('<p>' + 'Средне арифметичское = ' + avg + ' </p>');
             if (a == null) {
                 window.document.write('<p>Данные не были введены!</p>');
             }
             else {
                 window.document.write('<p>Средне арифметичское = 0 </p>');
             }
+            sum = a + b;
+            avg = sum / elmt.length;
+            window.document.write('<p>' + 'Средне арифметичское = ' + avg + ' </p>');
         }
 
         // if (a == null && b == null) {
