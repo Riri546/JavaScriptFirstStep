@@ -28,18 +28,15 @@
 
         for (i = 0; a != 0; ++i) {
             a = Number(window.prompt('Введте число: ', 0));
-            b = Number(window.prompt('Введте число: ', 0));
+            // b = Number(window.prompt('Введте число: ', 0));
             elmt[0] = a;
-            elmt[1] = b;
-            sum = a + b;
+            // elmt[1] = b;
+            sum += a;
             avg = sum / elmt.length;
             window.document.write('<p>' + 'Средне арифметичское = ' + avg + ' </p>');
-            break;
+            // break;
         }
-        if (a == null) {
-            window.document.write('<p>Данные не были введены!</p>');
-        }
-        else if (a == 0) {
+        if (a == 0) {
             window.document.write('<p>Средне арифметичское = 0 </p>');
         }
 
