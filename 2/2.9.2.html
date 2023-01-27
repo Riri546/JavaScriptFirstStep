@@ -26,29 +26,21 @@
         Строгий режим включен!
         Не забывай объявлять все переменные!
         // */
+
         let a, b, sum;
         a = Number(window.prompt('Введте число а: ', 0));
         b = Number(window.prompt('Введте число b: ', 0));
-        
-        if (a == null && b == null){
+
+        if (a == null && b == null) {
             window.document.write('<p>Данные не были введены!</p>');
         }
-        else if (a == 0 && b == 0){
+        else if (a == 0 && b == 0) {
             const avg = (sum / 2);
-            window.document.write('<p>','Среднее арифметическое чисел: ', avg, '</p>');
+            window.document.write('<p>', 'Среднее арифметическое чисел: ', avg, '</p>');
         }
         else
             sum = a + b;
-            window.document.write('<p>', a + "+" + b + "=", sum, '</p>');
-        
-            
-        // else {
-        //     const cents = inst * 2.54;
-        //     window.document.write('<p>', "Веичина в дюймых = " + inst, '</p>')
-        //     window.document.write('<p>', "Величина в сантиметрах = " + cents, '</p>');
-        // }
-
-
+        window.document.write('<p>', a + "+" + b + "=", sum, '</p>');
     </script>
 </body>
 
