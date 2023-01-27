@@ -15,7 +15,7 @@
     <div class="a">
         <h1>Суммирование чисел</h1>
     </div>
-    <h2>Уважаемый пользователь, этот вервис поможет вам посчитать средне ариыметическое введенных чисел</h2>
+    <h2>Уважаемый пользователь, этот вервис поможет вам посчитать средне ариыметическое введенных чисел.</h2>
     <script type="text/javascript">
         'use strict';
         /*
@@ -23,20 +23,23 @@
         Не забывай объявлять все переменные!
         // */
 
-        let a, b, sum;
+        let a, i, sum, avg;
         a = Number(window.prompt('Введте число а: ', 0));
-        b = Number(window.prompt('Введте число b: ', 0));
+        // b = Number(window.prompt('Введте число b: ', 0));
+        for(i = 0; a != 0; ++i){
+            
+        }
 
-        if (a == null && b == null) {
-            window.document.write('<p>Данные не были введены!</p>');
-        }
-        else if (a == 0 && b == 0) {
-            const avg = (sum / 2);
-            window.document.write('<p>', 'Среднее арифметическое чисел: ', avg, '</p>');
-        }
-        else
-            sum = a + b;
-        window.document.write('<p>', a + "+" + b + "=", sum, '</p>');
+        // if (a == null && b == null) {
+        //     window.document.write('<p>Данные не были введены!</p>');
+        // }
+        // else if (a == 0 && b == 0) {
+        //     const avg = (sum / 2);
+        //     window.document.write('<p>', 'Среднее арифметическое чисел: ', avg, '</p>');
+        // }
+        // else
+        //     sum = a + b;
+        // window.document.write('<p>', a + "+" + b + "=", sum, '</p>');
     </script>
 </body>
 
