@@ -23,25 +23,23 @@
         Не забывай объявлять все переменные!
         // */
 
-        let a, i, sum, avg;
+        let a, b, i, sum, avg;
         var elmt = new Array();
 
         // a = Number(window.prompt('Введте число а: ', 0));
         // b = Number(window.prompt('Введте число b: ', 0));
-        for(i = 0; a != 0; ++i){
+        for (i = 0; a != 0; ++i) {
             a = Number(window.prompt('Введте число: ', 0));
             b = Number(window.prompt('Введте число: ', 0));
             sum = a + b;
-            
             elmt[0] = a;
             elmt[1] = b;
-
             avg = sum / elmt.length;
-
-            if(a == null){
+            window.document.write('<p>' + 'Средне арифметичское = ' + avg + ' </p>');
+            if (a == null) {
                 window.document.write('<p>Данные не были введены!</p>');
             }
-            else{
+            else {
                 window.document.write('<p>Средне арифметичское = 0 </p>');
             }
         }
