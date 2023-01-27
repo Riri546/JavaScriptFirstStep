@@ -29,19 +29,19 @@
         let a, b, sum, avg;
         a = window.prompt('Введте число а: ', 0);
         b = window.prompt('Введте число b: ', 0);
-        window.document.write(a, b);
-        if (numA == null && numB == null){
+        
+        if (a == null && b == null)
             window.document.write('<p>Данные не были введены!</p>');
-        }
+        
         // else if (numA == 0 && numB == 0){
         //     sum = times.reduce((a, b) => a + b, 0);
         //     avg = (sum / times.length) || 0;
         //     window.document.write('<p>','Среднее арифметическое чисел а = ' + a + 'и b = ' + b + ' = ', avg, '</p>');
         // }
-        else{
+        else
             sum = a + b;
             window.document.write('<p>', a + "+" + b + "=", '</p>');
-        }
+        
             
         // else {
         //     const cents = inst * 2.54;
