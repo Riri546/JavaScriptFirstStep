@@ -29,7 +29,7 @@
         let a, b, sum, avg;
         a = window.prompt('Введте число а: ', 0);
         b = window.prompt('Введте число b: ', 0);
-
+        window.document.write(a, b);
         if (numA == null && numB == null){
             window.document.write('<p>Данные не были введены!</p>');
         }
@@ -40,7 +40,7 @@
         // }
         else{
             sum = a + b;
-            window.document.write('<p>','Сумма чисел чисел: ' + a + ' и ' + b + ' = ', sum, '</p>');
+            window.document.write('<p>', a + "+" + b + "=", '</p>');
         }
             
         // else {
