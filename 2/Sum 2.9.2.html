@@ -32,11 +32,13 @@
             elmt[0] = a;
             sum += a
             avg = sum / elmt.length;
-        }
-        if (a == 0) {
-            window.document.write('<p>Средне арифметичское = 0 </p>');
+            if (a === 0) 
+                window.document.write('<p>Средне арифметичское = 0 </p>');
+                break
         }
         window.document.write('<p>' + 'Средне арифметичское = ' + avg + ' </p>');
+        
+        
 
     </script>
 </body>
