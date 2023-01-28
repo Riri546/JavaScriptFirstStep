@@ -1,14 +1,28 @@
 <!doctype html>
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <title>Из дюймов в сантиметры</title>
+    <title>Длина окружности</title>
 </head>
 
 <body>
-    <h1>Длина окружности</h1>
+    <h1>Длина окружностей</h1>
     <script type="text/javascript">
-        
+        'use strict';
+        /*
+        Строгий режим включен!
+        Не забывай объявлять все переменные!
+        */
+        let i = 1, sq;
+        for (i = 1; i <= 10; ++i) {
+            sq = Math.sqrt(i);
+            if (sq == Math.floor(sq))
+                continue;
+            window.document.write('<tr><td>', i, '</td>');
+            window.document.write('<td>', Math.sqrt(i), '</td><tr>');
+        }
     </script>
 </body>
+
 </html>
