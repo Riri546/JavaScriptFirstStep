@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Из дюймов в сантиметры</title>
+</head>
+
+<body>
+    <h1>Пересчет величин</h1>
+    <script type="text/javascript">
+        const inst = window.prompt('Величина в дюймах', 0);
+        if (inst == null)
+            window.document.write('<p>Величина не была введена!</p>');
+        else if (inst < 0)
+            window.document.write('<p>Величина не может быть' +
+                'отрицательной!</p>');
+        else{
+            const cents = inst * 2.54;
+            window.document.write('<p>', "Веичина в дюймых = " + inst , '</p>')
+            window.document.write('<p>',"Величина в сантиметрах = " + cents, '</p>');
+        }
+    </script>
+</body>
+</html>
