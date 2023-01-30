@@ -1,5 +1,3 @@
 function circleLength(d) {
-    let l;
-    l = d * Math.PI;
-    return l;
+    return d * Math.PI;
 }
