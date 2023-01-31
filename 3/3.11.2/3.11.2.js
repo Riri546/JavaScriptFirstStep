@@ -1,14 +1,15 @@
 //Все работает, но нужно сделать апгрейд в виде проверки на строки, а то вторая часть тз не работает 
 function average() {
-    let i, avg, l = arguments.length;
+    let i, el, l = arguments.length;
     let sum = 0;
         for (i = 0; i < l; i++) {
-            window.document.writeln(arguments[i])
+            el = arguments[i]
+            window.document.writeln(el)
             if (typeof el == 'number') {
-                sum = sum + arguments[i];
+                sum += el;
             }
         }
-        return avg = sum / l;
+        return sum / l;
         
 }
 
