@@ -13,15 +13,16 @@
     <table>
         <script type="text/javascript">
             function average() {
-                let i, sum, avg, l = arguments.length;
+                let i, avg, l = arguments.length;
+                let sum = 0;
                 for (i = 0; i < l; i++) {
-                    sum += arguments[i];
-                    avg = sum / l;
-                    window.document.write('<p>', arguments[i] + ': ' + avg, '</p>');
+                    sum = sum + arguments[i];
+                    window.document.writeln(arguments[i])
                 }
-                
-                // window.document.write('<p>', arguments[i] + ': ' + avg, '</p>');
-                // window.document.write('<p>', avg, '</p>');
+                avg = sum / l;
+                window.document.write('<p>', 'Длина = ' + l, '</p>')
+                window.document.writeln('<p>', 'Сумма = ' + sum, '</p>')
+                window.document.writeln('<p>', "Среднее арифметическое = " + avg, '</p>');
             }
             average(10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
             // average(10, 20, 30, '40', 50, '60', 70, '80', 90, '100');
