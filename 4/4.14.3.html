@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Квадратные корни</title>
+    <title>Тригонометрия</title>
 </head>
 
 <body>
-    <h1>Квадратные корни от 10 до 200</h1>
+    <h1>Тригонометрия</h1>
     <table>
         <script type="text/javascript">
             'use strict';
@@ -15,14 +15,8 @@
             Строгий режим включен!
             Не забывай объявлять все переменные!
             */
-            let i, sq;
-            for(i = 10; i <= 200; ++i){
-                sq = Math.sqrt(i);
-                if(sq == Math.floor(sq))
-                    continue;
-                window.document.write('<tr><td>', i, '</td>');
-                window.document.write('<td>', Math.sqrt(i), '</td><tr>');
-            }
+            let use;
+            use = window.prompt('Введите значение угла: ', 0)
         </script>
     </table>
 </body>
