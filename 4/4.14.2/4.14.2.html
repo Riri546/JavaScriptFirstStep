@@ -15,11 +15,10 @@
     Не забывай объявлять все переменные!
     */
         let data, day, month, fullYear;
-        data = new Date();
-        day = data.getDate;
-        month = data.getMonth;
-        fullYear = data.getFullYear
-        window.document.write(day, Month, FullYear + 'г.');
+        data = new Date(2023, 2, 1);
+        data.getFullYear()
+        window.document.write(data.getDate(), '.', data.getMonth(), '.',  data.getFullYear(), 'г.');
+
     </script>
 </body>
 
