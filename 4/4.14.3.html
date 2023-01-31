@@ -17,15 +17,15 @@
             */
             let use, sin, cos, tan;
             use = window.prompt('Введите значение угла: ', 0);
-            sin = Math.sin(use);
-            cos = Math.cos(use);
-            tan = Math.tan(use);
+            sin = Math.sin(use).toFixed(2);
+            cos = Math.cos(use).toFixed(2);
+            tan = Math.tan(use).toFixed(2);
 
-            window.document.write('<tr><td>', 'sin', use, '</td>');
+            window.document.write('<tr><td>', 'sin ', use, '</td>');
             window.document.write('<td>', sin, '</td></tr>');
-            window.document.write('<tr><td>', 'cos', use, '</td>');
+            window.document.write('<tr><td>', 'cos ', use, '</td>');
             window.document.write('<td>', cos, '</td></tr>');
-            window.document.write('<tr><td>', 'tan', use, '</td>');
+            window.document.write('<tr><td>', 'tan ', use, '</td>');
             window.document.write('<td>', tan, '</td></tr>');
         </script>
     </table>
