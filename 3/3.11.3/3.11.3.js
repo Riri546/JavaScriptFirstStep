@@ -1,6 +1,4 @@
 function average2() {
-    var elmt = new Array();
-    elmt.push()
     let i, el, l = arguments.length;
     let sum = 0, count = 0;
     for (i = 0; i < l; i++) {
