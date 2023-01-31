@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Из дюймов в сантиметры</title>
@@ -9,26 +8,17 @@
 <body>
     <h1>Пересчет величин</h1>
     <script type="text/javascript">
-        let i, buf;
         const inst = window.prompt('Величина в дюймах', 0);
-
-        for (i = 0; i <= inst.length; i++) {
-            if (inst.includes(',') == true) {
-                buf = inst.replace(',', '.')
-            }
-            if (inst == null)
-                window.document.write('<p>Величина не была введена!</p>');
-            else if (inst < 0)
-                window.document.write('<p>Величина не может быть' +
-                    'отрицательной!</p>');
-            else {
-                const cents = inst * 2.54;
-                window.document.write('<p>', "Веичина в дюймых = " + inst, '</p>')
-                window.document.write('<p>', "Величина в сантиметрах = " + cents, '</p>');
-            }
+        if (inst == null)
+            window.document.write('<p>Величина не была введена!</p>');
+        else if (inst < 0)
+            window.document.write('<p>Величина не может быть' +
+                'отрицательной!</p>');
+        else{
+            const cents = inst * 2.54;
+            window.document.write('<p>', "Веичина в дюймых = " + inst , '</p>')
+            window.document.write('<p>',"Величина в сантиметрах = " + cents, '</p>');
         }
-
     </script>
 </body>
-
 </html>
