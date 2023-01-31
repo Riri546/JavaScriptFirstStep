@@ -9,6 +9,11 @@
     <h1>Пересчет величин</h1>
     <script type="text/javascript">
         const inst = window.prompt('Величина в дюймах', 0);
+        if(typeof inst == 'string'){
+            if(inst.includes(',') == true){
+                inst.replace(',', '.')
+            }        
+        }
         if (inst == null)
             window.document.write('<p>Величина не была введена!</p>');
         else if (inst < 0)
@@ -21,4 +26,4 @@
         }
     </script>
 </body>
-</html>
+</html>  
