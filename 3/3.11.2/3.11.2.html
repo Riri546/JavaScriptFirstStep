@@ -13,15 +13,18 @@
     <table>
         <script type="text/javascript">
             function average() {
-                let i, sum, l = arguments.length;
+                let i, sum, avg, l = arguments.length;
                 for (i = 0; i < l; i++) {
-                    // window.document.write(arguments[i] + ' ');
                     sum += arguments[i];
-                    window.document.write('<p>' + arguments[i] + ': ' + sum / l + '</p>');
+                    avg = sum / l;
+                    window.document.write('<p>', arguments[i] + ': ' + avg, '</p>');
                 }
+                
+                // window.document.write('<p>', arguments[i] + ': ' + avg, '</p>');
+                // window.document.write('<p>', avg, '</p>');
             }
             average(10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
-            average(10, 20, 30, '40', 50, '60', 70, '80', 90, '100');
+            // average(10, 20, 30, '40', 50, '60', 70, '80', 90, '100');
 
         </script>
     </table>
