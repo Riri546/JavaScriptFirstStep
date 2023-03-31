@@ -51,4 +51,17 @@
 </html>
 <script type = "text/javascript">
     const output = document.getElementById('output');
+    const buttons = document.querySelectorAll('nav div');
+    let current = buttons[0];
+
+    function showImage(){
+        current = this;
+        output.src = 'images/' + this.id + '.jpg';
+        buttons.forEach((el) => {
+            if (el == this)
+                el.className = 'active';
+            else 
+                el.className = '';
+        });
+    }
 </script>
