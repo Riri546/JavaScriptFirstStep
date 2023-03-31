@@ -53,7 +53,6 @@
     const output = window.document.getElementById('output');
     const buttons = window.document.querySelectorAll('nav div');
     let current = buttons[0];
-
     function showImage() {
         current = this;
         output.src = 'images/' + this.id + '.jpg';
@@ -64,10 +63,7 @@
                 el.className = '';
         });
     }
-
     buttons.forEach(
-        (el) => { 
-            el.addEventListener('click', 'showImage') 
-        }
+        (el) => { el.addEventListener('click', showImage) }
     );
 </script>
