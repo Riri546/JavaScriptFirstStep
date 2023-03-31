@@ -1,66 +1,75 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Слайдер</title>
-        <style type="text/css">
-            section, nav {
-                display: flex;
-                justify-content: center;
-            }
-            section {
-                height: 300px;
-            }
-            section img {
-                display: block;
-                height: 300px;
-            }
-            nav {
-                width: 50%;
-                margin: 30px auto auto;
-            }
-            nav div {
-                width: 20pt;
-                height: 20pt;
-                font-size: 20pt;
-                line-height: 20pt;
-                text-align: center;
-                margin: auto 10px;
-                border: thin solid grey;
-                color: black;
-                background-color: white;
-                cursor: pointer;
-            }
-            nav div.active {
-                color: white;
-                background-color: #000000e9;
-                cursor: auto;
-            }
-        </style>
-    </head>
-    <body>
-        <section>
-            <img id="output" src="images/1.jpg">
-        </section>
-        <nav>
-            <div id="1" class="active">1</div>
-            <div id="2">2</div>
-            <div id="3">3</div>
-        </nav>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Слайдер</title>
+    <style type="text/css">
+        section,
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        section {
+            height: 300px;
+        }
+
+        section img {
+            display: block;
+            height: 300px;
+        }
+
+        nav {
+            width: 50%;
+            margin: 30px auto auto;
+        }
+
+        nav div {
+            width: 20pt;
+            height: 20pt;
+            font-size: 20pt;
+            line-height: 20pt;
+            text-align: center;
+            margin: auto 10px;
+            border: thin solid grey;
+            color: black;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        nav div.active {
+            color: white;
+            background-color: #000000e9;
+            cursor: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <img id="output" src="images/1.jpg">
+    </section>
+    <nav>
+        <div id="1" class="active">1</div>
+        <div id="2">2</div>
+        <div id="3">3</div>
+    </nav>
+</body>
 </html>
-<script type = "text/javascript">
-    const output = document.getElementById('output');
-    const buttons = document.querySelectorAll('nav div');
+
+<script type="text/javascript">
+    const output = window.document.getElementById('output');
+    const buttons = window.document.querySelectorAll('nav div');
     let current = buttons[0];
 
-    function showImage(){
+    function showImage() {
         current = this;
         output.src = 'images/' + this.id + '.jpg';
         buttons.forEach((el) => {
             if (el == this)
                 el.className = 'active';
-            else 
+            else
                 el.className = '';
         });
     }
