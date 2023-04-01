@@ -82,7 +82,6 @@
     function showImage() {
         current = this;
         output.src = getImageURL(this.id);
-        // output.src = 'images/' + this.id + '.jpg';
         buttons.forEach((el) => {
             if (el == this)
                 el.className = 'active';
