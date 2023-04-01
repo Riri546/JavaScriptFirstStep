@@ -74,9 +74,16 @@
 <script type="text/javascript">
     const output = window.document.getElementById('output');
     const buttons = window.document.querySelectorAll('nav div');
+    const preview = window.document.getElementById('preview');
     let current = buttons[0];
+
+    function getImageURL(fileName) {
+        return 'images/' + fileName + '.jpg'
+    }
+
     function showImage() {
         current = this;
+        output.src = getImageURL(this.id);
         output.src = 'images/' + this.id + '.jpg';
         buttons.forEach((el) => {
             if (el == this)
@@ -85,7 +92,17 @@
                 el.className = '';
         });
     }
+
+    function showPreview(evt) {
+        preview.style.left = evt.pageX + 'px';
+        preview.style.top = evt.pageY + 'px';
+        preview.style.backgroundImage = 'url (' + getImageURL(this.id) + ')';
+        preview.className = 'active';
+    }
+
     buttons.forEach(
         (el) => { el.addEventListener('click', showImage) }
     );
+
+
 </script>
