@@ -76,15 +76,13 @@
     const buttons = window.document.querySelectorAll('nav div');
     const preview = window.document.getElementById('preview');
     let current = buttons[0];
-
     function getImageURL(fileName) {
         return 'images/' + fileName + '.jpg'
     }
-
     function showImage() {
         current = this;
         output.src = getImageURL(this.id);
-        output.src = 'images/' + this.id + '.jpg';
+        // output.src = 'images/' + this.id + '.jpg';
         buttons.forEach((el) => {
             if (el == this)
                 el.className = 'active';
@@ -92,17 +90,23 @@
                 el.className = '';
         });
     }
-
     function showPreview(evt) {
         preview.style.left = evt.pageX + 'px';
         preview.style.top = evt.pageY + 'px';
-        preview.style.backgroundImage = 'url (' + getImageURL(this.id) + ')';
+        preview.style.backgroundImage = 'url(' + getImageURL(this.id) + ')';
         preview.className = 'active';
     }
-
+    function hidePreview() {
+        preview.className = '';
+    }
     buttons.forEach(
-        (el) => { el.addEventListener('click', showImage) }
+        (el) => {
+             el.addEventListener('click', showImage);
+             el.addEventListener('mouseover', showPreview);
+             el.addEventListener('mouseout', hidePreview);
+            }
     );
-
-
 </script>
+
+
+
