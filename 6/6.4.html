@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Слайдер 3</title>
+    <style type="text/css">
+        section,
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        section {
+            height: 500px;
+        }
+
+        section img {
+            display: block;
+            height: 500px;
+        }
+
+        nav {
+            width: 50%;
+            margin: 30px auto auto;
+        }
+
+        nav div {
+            width: 20pt;
+            height: 20pt;
+            font-size: 20pt;
+            line-height: 20pt;
+            text-align: center;
+            margin: auto 10px;
+            border: thin solid grey;
+            color: black;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        nav div.active {
+            color: white;
+            background-color: black;
+            cursor: auto;
+        }
+
+        #preview {
+            position: absolute;
+            width: 250px;
+            height: 190px;
+            background: left/contain no-repeat;
+            display: none;
+        }
+
+        #preview.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <img id="output" src="images/1.jpg">
+    </section>
+    <nav>
+        <div id="1" class="active">1</div>
+        <div id="2">2</div>
+        <div id="3">3</div>
+    </nav>
+    <div id="preview"></div>
+</body>
+
+</html>
+<script type="text/javascript">
+    const output = window.document.getElementById('output');
+    const buttons = window.document.querySelectorAll('nav div');
+    const preview = window.document.getElementById('preview');
+    let current = buttons[0];
+    function getImageURL(fileName) {
+        return 'images/' + fileName + '.jpg'
+    }
+    function showImage() {
+        current = this;
+        output.src = getImageURL(this.id);
+        buttons.forEach((el) => {
+            if (el == this)
+                el.className = 'active';
+            else
+                el.className = '';
+        });
+    }
+    function showPreview(evt) {
+        preview.style.left = evt.pageX + 'px';
+        preview.style.top = evt.pageY + 'px';
+        preview.style.backgroundImage = 'url(' + getImageURL(this.id) + ')';
+        preview.className = 'active';
+    }
+    function hidePreview() {
+        preview.className = '';
+    }
+    buttons.forEach(
+        (el) => {
+             el.addEventListener('click', showImage);
+             el.addEventListener('mouseover', showPreview);
+             el.addEventListener('mouseout', hidePreview);
+            }
+    );
+</script>
