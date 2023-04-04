@@ -101,15 +101,14 @@
         }
     }
     function hidePreview() {
-        if (evt.target != this){
+        if (evt.target != this)
             preview.className = '';
-        }
     }
-    buttons.forEach(
-        (el) => {
-            el.addEventListener('click', showImage);
-            el.addEventListener('mouseover', showPreview);
-            el.addEventListener('mouseout', hidePreview);
-        }
-    );
+    // buttons.forEach(
+    //     (el) => {
+    el.addEventListener('click', showImage);
+    el.addEventListener('mouseover', showPreview);
+    el.addEventListener('mouseout', hidePreview);
+    //     }
+    // );
 </script>
