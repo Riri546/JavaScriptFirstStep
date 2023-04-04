@@ -62,7 +62,7 @@
     <section>
         <img id="output" src="images/1.jpg">
     </section>
-    <nav>
+    <nav id="buttonset">
         <div id="1" class="active">1</div>
         <div id="2">2</div>
         <div id="3">3</div>
@@ -75,34 +75,41 @@
     const output = window.document.getElementById('output');
     const buttons = window.document.querySelectorAll('nav div');
     const preview = window.document.getElementById('preview');
+    const buttonset = window.document.getElementById('buttonset');
     let current = buttons[0];
     function getImageURL(fileName) {
         return 'images/' + fileName + '.jpg'
     }
     function showImage() {
-        current = this;
-        output.src = getImageURL(this.id);
-        buttons.forEach((el) => {
-            if (el == this)
-                el.className = 'active';
-            else
-                el.className = '';
-        });
+        if (evt.target != this) {
+            current = evt.target;
+            output.src = getImageURL(evt.target.id);
+            buttons.forEach((el) => {
+                if (el == this)
+                    el.className = 'active';
+                else
+                    el.className = '';
+            });
+        }
     }
     function showPreview(evt) {
-        preview.style.left = evt.pageX + 'px';
-        preview.style.top = evt.pageY + 'px';
-        preview.style.backgroundImage = 'url(' + getImageURL(this.id) + ')';
-        preview.className = 'active';
+        if (evt.target != this) {
+            preview.style.left = evt.pageX + 'px';
+            preview.style.top = evt.pageY + 'px';
+            preview.style.backgroundImage = 'url(' + getImageURL(evt.target.id) + ')';
+            preview.className = 'active';
+        }
     }
     function hidePreview() {
-        preview.className = '';
+        if (evt.target != this){
+            preview.className = '';
+        }
     }
     buttons.forEach(
         (el) => {
-             el.addEventListener('click', showImage);
-             el.addEventListener('mouseover', showPreview);
-             el.addEventListener('mouseout', hidePreview);
-            }
+            el.addEventListener('click', showImage);
+            el.addEventListener('mouseover', showPreview);
+            el.addEventListener('mouseout', hidePreview);
+        }
     );
 </script>
