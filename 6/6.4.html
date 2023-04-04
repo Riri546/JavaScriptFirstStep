@@ -80,12 +80,12 @@
     function getImageURL(fileName) {
         return 'images/' + fileName + '.jpg'
     }
-    function showImage() {
+    function showImage(evt) {
         if (evt.target != this) {
             current = evt.target;
             output.src = getImageURL(evt.target.id);
             buttons.forEach((el) => {
-                if (el == this)
+                if (el == evt.target)
                     el.className = 'active';
                 else
                     el.className = '';
@@ -100,11 +100,11 @@
             preview.className = 'active';
         }
     }
-    function hidePreview() {
+    function hidePreview(evt) {
         if (evt.target != this)
             preview.className = '';
     }
-    buttons.addEventListener('click', showImage);
-    buttons.addEventListener('mouseover', showPreview);
-    buttons.addEventListener('mouseout', hidePreview);
+    buttonset.addEventListener('click', showImage);
+    buttonset.addEventListener('mouseover', showPreview);
+    buttonset.addEventListener('mouseout', hidePreview);
 </script>
