@@ -108,5 +108,7 @@
     buttonset.addEventListener('click', showImage);
     buttonset.addEventListener('mouseover', showPreview);
     buttonset.addEventListener('mouseout', hidePreview);
-    buttons.addEventListener('contextmenu', showImage);
+    buttons.addEventListener('contextmenu', (evt) => {
+        evt.preventDefault();
+    });
 </script>
