@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Слайдер 3</title>
+    <style type="text/css">
+        section,
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        section {
+            height: 500px;
+        }
+
+        section img {
+            display: block;
+            height: 500px;
+        }
+
+        nav {
+            width: 50%;
+            margin: 30px auto auto;
+        }
+
+        nav a {
+            width: 20pt;
+            height: 20pt;
+            font-size: 20pt;
+            line-height: 20pt;
+            text-align: center;
+            margin: auto 10px;
+            border: thin solid grey;
+            color: black;
+            background-color: white;
+            cursor: pointer;
+            display: block;
+            text-decoration: none;
+        }
+
+        nav a.active {
+            color: white;
+            background-color: black;
+            cursor: auto;
+        }
+
+        #preview {
+            position: absolute;
+            width: 250px;
+            height: 190px;
+            background: left/contain no-repeat;
+            display: none;
+        }
+
+        #preview.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <img id="output" src="images/1.jpg">
+    </section>
+    <nav id="buttonset">
+        <a href="images/1.jpg" class="active">1</a>
+        <a href="images/2.jpg">2</a>
+        <a href="images/3.jpg">3</a>
+
+    </nav>
+    <div id="preview"></div>
+</body>
+
+</html>
+<script type="text/javascript">
+    const output = window.document.getElementById('output');
+    const buttonset = window.document.getElementById('buttonset');
+    const buttons = window.document.querySelectorAll('nav a');
+    const preview = window.document.getElementById('preview');
+    let current = buttons[0];
+    function showImage(evt) {
+        if (evt.target != this) {
+            current = evt.target;
+            output.src = evt.target.href;
+            buttons.forEach((el) => {
+                if (el == evt.target)
+                    el.className = 'active';
+                else
+                    el.className = '';
+            });
+            evt.preventDefault();
+        }
+    }
+    function showPreview(evt) {
+        if (evt.target != this) {
+            preview.style.left = evt.pageX + 'px';
+            preview.style.top = evt.pageY + 'px';
+            preview.style.backgroundImage = 'url(' + evt.target.href + ')';
+            preview.className = 'active';
+        }
+    }
+    function hidePreview(evt) {
+        if (evt.target != this)
+            preview.className = '';
+    }
+    buttonset.addEventListener('click', showImage);
+    buttonset.addEventListener('mouseover', showPreview);
+    buttonset.addEventListener('mouseout', hidePreview);
+</script>
