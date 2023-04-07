@@ -105,14 +105,13 @@
     function hidePreview(evt) {
         if (evt.target != this)
             preview.className = '';
-        // if (showPreview == this) {
-        //     preview.className = '';
-        // }
     }
-
-
 
     buttonset.addEventListener('click', showImage);
     buttonset.addEventListener('mouseover', showPreview);
     buttonset.addEventListener('mouseout', hidePreview);
+    buttonset.addEventListener('mouseover', (evt) => {
+        if (evt.target != this && evt.target == current)
+            evt.stopPropagation();
+    }, true);
 </script>
