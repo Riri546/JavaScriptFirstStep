@@ -59,8 +59,9 @@
         }
     </style>
 </head>
-
-<body>
+<!-- в body ставим oncontextmenu="return false;" и контекстное меню не будет 
+    вызываться при щелчке правой кнопкой мыши на всей странице -->
+<body oncontextmenu="return false;"> 
     <section>
         <img id="output" src="images/1.jpg">
     </section>
@@ -108,7 +109,4 @@
     buttonset.addEventListener('click', showImage);
     buttonset.addEventListener('mouseover', showPreview);
     buttonset.addEventListener('mouseout', hidePreview);
-    buttons.addEventListener('contextmenu', (evt) => {
-        evt.preventDefault();
-    });
 </script>
