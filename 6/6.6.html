@@ -67,6 +67,7 @@
         <img id="output" src="images/1.jpg">
     </section>
     <nav id="buttonset">
+        <!-- Привязка изображений к кнопкам -->
         <a href="images/1.jpg" class="active">1</a>
         <a href="images/2.jpg">2</a>
         <a href="images/3.jpg">3</a>
@@ -81,6 +82,7 @@
     const buttons = window.document.querySelectorAll('nav a');
     const preview = window.document.getElementById('preview');
     let current = buttons[0];
+    // Показ изобраения в основном блоке 
     function showImage(evt) {
         if (evt.target != this) {
             current = evt.target;
@@ -94,6 +96,7 @@
             evt.preventDefault();
         }
     }
+    // Поредпоказ неактивного изобрадения в малом блоке 
     function showPreview(evt) {
         if (evt.target != this) {
             preview.style.left = evt.pageX + 'px';
@@ -102,14 +105,19 @@
             preview.className = 'active';
         }
     }
+    // Функция, которая убирает мини изобрпжение из предпоказа 
     function hidePreview(evt) {
         if (evt.target != this)
             preview.className = '';
     }
-
+    // Привязка к функций к событиям 
+    // Смена картинки в зависимости от выбранной кнопки переключения 
     buttonset.addEventListener('click', showImage);
+    // Показ неактивного изобраения в малом блоке
     buttonset.addEventListener('mouseover', showPreview);
+    // Прекращение показа неактивного изобраения в малом блоке
     buttonset.addEventListener('mouseout', hidePreview);
+    // Отмена показа активного изображения в малом блоке
     buttonset.addEventListener('mouseover', (evt) => {
         if (evt.target != this && evt.target == current)
             evt.stopPropagation();
