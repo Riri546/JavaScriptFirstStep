@@ -61,7 +61,8 @@
 </head>
 <!-- в body ставим oncontextmenu="return false;" и контекстное меню не будет 
     вызываться при щелчке правой кнопкой мыши на всей странице -->
-<body oncontextmenu="return false;"> 
+
+<body oncontextmenu="return false;">
     <section>
         <img id="output" src="images/1.jpg">
     </section>
@@ -69,7 +70,6 @@
         <a href="images/1.jpg" class="active">1</a>
         <a href="images/2.jpg">2</a>
         <a href="images/3.jpg">3</a>
-
     </nav>
     <div id="preview"></div>
 </body>
@@ -105,7 +105,13 @@
     function hidePreview(evt) {
         if (evt.target != this)
             preview.className = '';
+        // if (showPreview == this) {
+        //     preview.className = '';
+        // }
     }
+
+
+
     buttonset.addEventListener('click', showImage);
     buttonset.addEventListener('mouseover', showPreview);
     buttonset.addEventListener('mouseout', hidePreview);
